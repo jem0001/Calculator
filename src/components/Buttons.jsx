@@ -68,7 +68,11 @@ const Buttons = ({
             className={` p-4 rounded-full shadow-md shadow-gray-500 hover:scale-105 text-gray-700 ${
               typeof bvalue === "number"
                 ? "bg-gradient-to-b from-white to-secondary "
-                : "bg-gradient-to-b from-tertiary to-blue-gray text-red-500"
+                : `bg-gradient-to-b from-tertiary to-blue-gray ${
+                    ["AC", "C"].includes(bvalue)
+                      ? "text-red-500"
+                      : "text-sky-500"
+                  }`
             }`}
           >
             {bvalue}
